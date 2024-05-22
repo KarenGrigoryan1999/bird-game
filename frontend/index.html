@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+  <title>My game</title>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .scene {
+      display: flex;
+      background-color: aqua;
+      position: absolute;
+      width: 280px;
+      height: 500px;
+      top: 0;
+      left: 0;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .scene--showed {
+      display: flex;
+    }
+
+    .scene--hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="280" height="500"></canvas>
+  <div id="start-scene" class="scene scene--showed">
+    <button onclick="onStartClick()">Начать игру</button>
+  </div>
+  <div id="search-scene" class="scene scene--hidden">
+    <p>Поиск игрока...</p>
+  </div>
+  <script src="./scenes.js"></script>
+  <script src="./script.js"></script>
+  <script src="./wsconnect.js"></script>
+</body>
+</html>
